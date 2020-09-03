@@ -7,7 +7,7 @@ import {
   Message,
   Container,
   Header,
-  Aside,
+  Aside, Menu, MenuItem, Submenu,
   Main } from 'element-ui'
 
 Vue.use(Button)
@@ -18,4 +18,7 @@ Vue.use(Container)
 Vue.use(Header)
 Vue.use(Main)
 Vue.use(Aside)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu)
 Vue.prototype.$message = Message
