@@ -1,0 +1,250 @@
+[2020-09-02T15:03:57.789] [DEBUG] cheese - login => username:zs,password:123456
+[2020-09-02T15:03:57.791] [DEBUG] cheese - zs
+[2020-09-02T15:03:57.802] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'zs\' LIMIT 1' }
+[2020-09-02T15:03:57.807] [DEBUG] cheese - 查询失败
+[2020-09-02T15:04:51.992] [DEBUG] cheese - login => username:zce,password:123456
+[2020-09-02T15:04:51.992] [DEBUG] cheese - zce
+[2020-09-02T15:04:52.004] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'zce\' LIMIT 1' }
+[2020-09-02T15:04:52.004] [DEBUG] cheese - 查询失败
+[2020-09-02T15:06:14.993] [DEBUG] cheese - login => username:zce,password:123456
+[2020-09-02T15:06:14.995] [DEBUG] cheese - zce
+[2020-09-02T15:06:15.010] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'zce\' LIMIT 1' }
+[2020-09-02T15:06:15.015] [DEBUG] cheese - 查询失败
+[2020-09-02T15:09:58.717] [DEBUG] cheese - login => username:admin,password:123456
+[2020-09-02T15:09:58.717] [DEBUG] cheese - admin
+[2020-09-02T15:09:58.732] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'admin\' LIMIT 1' }
+[2020-09-02T15:09:58.733] [DEBUG] cheese - 查询失败
+[2020-09-02T15:10:17.632] [DEBUG] cheese - login => username:ww,password:123456
+[2020-09-02T15:10:17.632] [DEBUG] cheese - ww
+[2020-09-02T15:10:17.637] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'ww\' LIMIT 1' }
+[2020-09-02T15:10:17.638] [DEBUG] cheese - 查询失败
+[2020-09-02T15:10:59.527] [DEBUG] cheese - login => username:admin,password:123456
+[2020-09-02T15:10:59.527] [DEBUG] cheese - admin
+[2020-09-02T15:10:59.532] [DEBUG] cheese - { Error: ER_NO_SUCH_TABLE: Table 'mydb.sp_manager' doesn't exist
+    at Query.Sequence._packetToError (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+    at readableAddChunk (_stream_readable.js:269:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    --------------------
+    at Protocol._enqueue (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at PoolConnection.query (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_orm@4.0.2@orm\lib\Drivers\DML\mysql.js:231:9
+    at Ping.onOperationComplete (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Pool.js:110:5)
+    at Ping.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Ping._callback (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:488:16)
+    at Ping.Sequence.end (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Ping.Sequence.OkPacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:92:8)
+    at Protocol._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\BaiduNetdiskDownload\电商项目实战\3.vue-项目实战day1\素材\vue_api_server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'mydb.sp_manager\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'SELECT `mg_id`, `mg_name`, `mg_pwd`, `mg_time`, `role_id`, `mg_mobile`, `mg_email`, `mg_state` FROM `sp_manager` WHERE `mg_name` = \'admin\' LIMIT 1' }
+[2020-09-02T15:10:59.533] [DEBUG] cheese - 查询失败
+[2020-09-02T15:13:29.664] [DEBUG] cheese - login => username:admin,password:123456
+[2020-09-02T15:13:29.666] [DEBUG] cheese - admin
+[2020-09-02T15:13:29.699] [DEBUG] cheese - null
+[2020-09-02T15:13:29.699] [DEBUG] cheese - null
