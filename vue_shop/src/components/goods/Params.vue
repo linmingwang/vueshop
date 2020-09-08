@@ -40,7 +40,7 @@
             <el-table-column type="expand">
               <template slot-scope="scope">
                 <!-- 循环渲染Tag标签 -->
-                <el-tag v-for="(item,i) in scope.row.attr_vals" :key="i" closable>{{ item }}</el-tag>
+                <el-tag v-for="(item,i) in scope.row.attr_vals" :key="i" closable @close="handleClosed(i,scope.row)">{{ item }}</el-tag>
                 <!-- 输入的文本框 -->
                 <el-input
                   ref="saveTagInput"
@@ -73,7 +73,24 @@
           <!-- 静态属性表格 -->
           <el-table :data="onlyTableData" border stripe>
             <!-- 展开行 -->
-            <el-table-column type="expand" />
+            <el-table-column type="expand">
+              <template slot-scope="scope">
+                <!-- 循环渲染Tag标签 -->
+                <el-tag v-for="(item,i) in scope.row.attr_vals" :key="i" closable @close="handleClosed(i,scope.row)">{{ item }}</el-tag>
+                <!-- 输入的文本框 -->
+                <el-input
+                  ref="saveTagInput"
+                  v-model="scope.row.inputValue"
+                  class="input-new-tag"
+                  v-if="scope.row.inputVisible"
+                  size="small"
+                  @keyup.enter.native="handleInputConfirm(scope.row)"
+                  @blur="handleInputConfirm(scope.row)"
+                />
+                <!-- 添加按钮 -->
+                <el-button v-else class="button-new-tag" size="small" @click="showInput(scope.row)">+ New Tag</el-button>
+              </template>
+            </el-table-column>
             <!-- 索引列 -->
             <el-table-column type="index" />
             <el-table-column label="属性名称" prop="attr_name" />
@@ -201,6 +218,8 @@ export default {
     async parentCateChanged() {
       // 证明选中的不是三级分类
       if (this.selectedKeys.length !== 3) {
+        this.manyTableData = []
+        this.onlyTableData = []
         this.selectedKeys = []
         return
       }
@@ -299,7 +318,7 @@ export default {
       await this.parentCateChanged()
     },
     // 文本框失去焦点，或按下了enter都会出发
-    handleInputConfirm(row) {
+    async handleInputConfirm(row) {
       if (row.inputValue.trim().length === 0) {
         row.inputValue = ''
         row.inputVisible = false
@@ -307,8 +326,19 @@ export default {
       }
       // 如果没有return 则说明输入的内容，需要做后续处理
       row.attr_vals.push(row.inputValue.trim())
+      this.saveAttrVals(row)
+    },
+    // 将对 attr_vals 的操作，保存到数据库中
+    async saveAttrVals(row) {
       row.inputValue = ''
       row.inputVisible = false
+      const { data: res } = await this.$http.put(`categories/${this.cateId()}/attributes/${row.attr_id}`, {
+        attr_name: row.attr_name,
+        attr_sel: row.attr_sel,
+        attr_vals: row.attr_vals.join(' ')
+      })
+      if (res.meta.status !== 200) return this.$message.error('修改参数项失败')
+      this.$message.success('修改参数项成功')
     },
     // 点击按钮名展示文本输入框
     showInput(row) {
@@ -317,6 +347,11 @@ export default {
       this.$nextTick(_ => {
         this.$refs.saveTagInput.$refs.input.focus()
       })
+    },
+    // 删除对应的参数可选项
+    handleClosed(i, row) {
+      row.attr_vals.splice(i, 1)
+      this.saveAttrVals(row)
     }
   }
 }
@@ -326,10 +361,20 @@ export default {
 .cat_opt {
   margin-top: 15px;
 }
-  .el-tag {
-    margin-top: 10px;
-  }
-  .input-new-tag {
-    width: 120px;
-  }
+.el-tag + .el-tag {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.button-new-tag {
+  margin-left: 10px;
+  height: 32px;
+  line-height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.input-new-tag {
+  width: 90px;
+  margin-left: 10px;
+  vertical-align: bottom;
+}
 </style>
