@@ -37,7 +37,7 @@
         <el-table-column label="操作" width="130px">
           <template>
             <el-button size="mini" type="primary" icon="el-icon-edit" @click="showBox" />
-            <el-button size="mini" type="success" icon="el-icon-location" />
+            <el-button size="mini" type="success" icon="el-icon-location" @click="showProgressBox" />
           </template>
         </el-table-column>
       </el-table>
@@ -56,11 +56,17 @@
       title="修改地址"
       :visible.sync="addressVisible"
       width="50%"
+      @close="addressVisibleClosed"
     >
       <!-- 内容主体区域 -->
-      <el-form ref="addressFormRef" :model="addressForm" :rules="addressFormRules" label-width="70px">
+      <el-form ref="addressFormRef" :model="addressForm" :rules="addressFormRules" label-width="100px">
         <el-form-item label="省市区/县" prop="address1">
-          <el-input/>
+          <!-- 商品分类级联区域 -->
+          <el-cascader
+            v-model="addressForm.address1"
+            :options="citydata"
+            clearable
+          />
         </el-form-item>
         <el-form-item label="详细地址" prop="address2">
           <el-input/>
@@ -71,10 +77,16 @@
     <el-button type="primary" @click="addressVisible = false">确 定</el-button>
   </span>
     </el-dialog>
+    <el-dialog
+      title="修改地址"
+      :visible.sync="progressVisible"
+      width="50%"
+    />
   </div>
 </template>
 
 <script>
+import citydata from './citydata'
 export default {
   name: 'Order',
   data() {
@@ -98,7 +110,11 @@ export default {
       addressFormRules: {
         address1: [{ required: true, message: '请选择省市区/县', trigger: 'blur' }],
         address2: [{ required: true, message: '请输入详细地址', trigger: 'blur' }]
-      }
+      },
+      citydata,
+      // 控制物流进度对话框显示与隐藏
+      progressVisible: false,
+      progressInfo: {}
     }
   },
   created() {
@@ -129,11 +145,22 @@ export default {
     // 显示修改地址对话框
     showBox() {
       this.addressVisible = true
+    },
+    addressVisibleClosed() {
+      this.$refs.addressFormRef.resetFields()
+    },
+    async showProgressBox() {
+      const { data: res } = await this.$http.get('/kuaidi/804909574412544580')
+      if (res.meta.status !== 200) return this.$message.error('获取物流进度失败')
+      this.progressInfo = res.data
+      this.progressVisible = true
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-
+.el-cascader{
+  width: 100%;
+}
 </style>
